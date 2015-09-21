@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "required": ["user"],
+  "properties": {
+    "user" : {
+      "type" : "object",
+      "required" : [
+        "id",
+        "email",
+        "first_name",
+        "last_name",
+        "phone_number",
+        "age",
+        "gender"
+      ],
+      "properties" : {
+        "id" : { "type" : "integer" },
+        "email" : { "type" : "string" },
+        "first_name" : { "type" : "string" },
+        "last_name" : { "type" : "string" },
+        "phone_number" : {
+          "type" : "string",
+          "pattern": "^(\\([0-9]{3}\\))?[0-9]{3}-[0-9]{4}$"
+        },
+        "gender" : {
+          "enum": ["Male", "Female"]
+        },
+        "age" : {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    }
+  }
+}
